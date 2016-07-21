@@ -1,0 +1,446 @@
+.container {
+    @include center(1200px);
+    @include cf;
+    h1 {
+        margin: 10px;
+    }
+}
+
+// -- HEADER
+.gornji-meni-full {
+    height: auto;
+    @include breakpoint($tablet) {
+        height: 25px;
+        overflow: hidden;
+    }
+}
+
+.gornji-meni {
+    min-height: 55px;
+    // height: auto;
+    @include breakpoint(max-width $tablet) {
+        padding-top: 26px;
+    }
+    @include breakpoint($tablet) {
+        // background-color: transparent;
+        @include center(1200px);
+    }
+    .down {
+        position: relative;
+        top: -8px;
+        float: right;
+        margin-right: 20px;
+        // perspective: 1000;
+        @include breakpoint($tablet) {
+            display: none;
+        }
+    }
+}
+
+.o-s-link {
+    display: none;
+    @include breakpoint($tablet) {
+        display: inline-block;
+        padding-top: 3px;
+        margin-left: 280px;
+        // height: auto;
+        // min-height: 25px;
+    }
+}
+
+.gornji-submeni {
+    width: 100%;
+    @include breakpoint($tablet) {
+        width: 30%;
+        display: block;
+        height: auto;
+        position: static;
+        float: right;
+        // top: 0px;
+        // right: 0px;
+    }
+}
+
+.ostali-sajtovi {
+    @extend %skriveno;
+    position: relative;
+    top: 2px;
+    left: -20px;
+}
+
+.header-content-wrap {
+    // width: 100%;
+}
+
+.header-content {
+    // width: 55px;
+    position: absolute;
+    top: 0;
+    @include breakpoint($tablet) {
+        @include center(1200px);
+        position: static;
+    }
+}
+
+.tel-chat-wide {
+    display: none;
+    @include breakpoint($tablet) {
+        display: block;
+        // height: 40px;
+        // width: 500px;
+        margin-top: 25px;
+        margin-left: 45%;
+    }
+    * {
+        float: left;
+        margin-right: 5px;
+    }
+    div {
+        margin-right: 20px;
+    }
+}
+
+.glavni-meni {
+    @include breakpoint($tablet) {
+        @include center(1200px);
+    }
+    .big-meni {
+        display: block;
+        @include breakpoint($tablet) {
+            position: absolute;
+            left: 0;
+            top: 35px;
+            width: 1200px;
+            width: 100%;
+        }
+    }
+}
+
+.meni-grupa {
+        @include stack();
+    @include breakpoint($tablet) {
+        @include col(1/4, $gutter: .5);
+    }
+}
+
+@include breakpoint($medium) {
+    .subglide {
+        margin-bottom: -50px;
+    }
+}
+
+.meni-slika {
+    @include col(2/4, $gutter: .5);
+    img {
+        width: 100%;
+        max-height: 200px;
+    }
+    @include breakpoint ($tablet $large) {
+        margin-top: 20px;
+    }
+}
+
+// -- LOGO
+.logo {
+    img {
+        float: left;
+        margin: 5px 0;
+        height: 49px;
+        @include breakpoint($tablet) {
+            float: left;
+            height: 59px;
+            margin-left: 30px;
+        }
+    }
+}
+
+// -- TXT BOX
+.tekstovi {
+    @extend %layout-grupa;
+}
+
+.text-box {
+    @include col(1/1) @include breakpoint($tablet) {
+        @include col(1/3);
+    }
+}
+
+// -- PAKETI
+.paketi-slike {
+    @extend %layout-grupa;
+    @include breakpoint($mobile) {
+        margin: $fluid-margina;
+    }
+}
+
+.paketi-slike figure {
+    position: relative;
+    img {
+        display: block;
+        max-width: 100%;
+    }
+    figcaption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 45px;
+    }
+    span {
+        position: absolute;
+        right: -60px;
+        bottom: 25px;
+    }
+    a {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 200%
+    }
+    margin-bottom: 6px;
+    @include breakpoint($mobile) {
+        @include col(1/2, $cycle: 2, $gutter: 2);
+        margin-bottom: 10px;
+    }
+    @include breakpoint($tablet) {
+        @include col(1/4, $uncycle: 2);
+        margin-bottom: 10px;
+    }
+}
+
+// -- KATEGORIJE
+.kategorije {
+    @extend %layout-grupa;
+    @include breakpoint($mobile) {
+        margin: $fluid-margina;
+    }
+}
+
+.kategorija {
+    overflow: hidden;
+    position: relative;
+    @include breakpoint($mobile) {
+        @include col(1/2, $cycle: 2, $gutter: 3);
+    }
+    @include breakpoint($tablet) {
+        @include col(1/3, $cycle: 3, $uncycle: 2, $gutter: 3);
+    }
+    &:last-child {
+        border-bottom: none;
+        @include breakpoint($mobile) {
+            @include shift(0.25);
+        }
+        @include breakpoint($tablet) {
+            @include shift(0);
+        }
+    }
+}
+
+.kategorije svg {
+    width: 15%;
+    // height: auto;
+    max-height: 70px;
+    @extend %center;
+}
+
+.kategorija a,
+.kategorija a:before {
+    @extend %center;
+    width: 30%;
+    padding: 0.7rem 0;
+}
+
+.klijenti {
+    @extend %layout-grupa;
+}
+
+// -- TOP FOOTER
+.top-footer {
+    @include cf;
+    height: auto;
+    // margin-top: 10px;
+    overflow: hidden;
+    .center {
+        width: 370px;
+        margin: 0 auto;
+        @include breakpoint($tablet) {
+            width: 464px;
+        }
+    }
+    @include breakpoint($tablet) {
+        height: 30px;
+    }
+    a {
+        float: left;
+        width: auto;
+        display: block;
+        padding: 0.7rem;
+        @include breakpoint($tablet) {
+            width: auto;
+            height: 100%;
+        }
+        &.ponuda-link {
+            margin-right: 10px;
+        }
+    }
+}
+
+// -- FOOTER
+.footer {
+    padding-bottom: 10px;
+    z-index: 200;
+}
+
+.footer-kolona {
+    width: 100%;
+    @include breakpoint($medium) {
+        &.linkovi {
+            @include span(1/2);
+        }
+    }
+    @include breakpoint($tablet) {
+        &.linkovi {
+            @include span(1/3);
+        }
+    }
+    @include breakpoint($large) {
+        @include span(1/5);
+        &.linkovi {
+            @include span(0.8/5);
+        }
+    }
+}
+
+.footer-kolona.beli-logo {
+    img {
+        width: 90%;
+    }
+    @include breakpoint(max-width $tablet) {
+        padding: 0 10px;
+        width: 100%;
+        text-align: center;
+        img {
+            @extend %center;
+            padding-top: 1rem;
+            max-width: 400px;
+        }
+        ul {
+            padding-left: 0;
+        }
+        a {
+            padding-left: 0;
+        }
+    }
+    @include span(1/3);
+    img {
+        padding-top: 1rem;
+    }
+    @include breakpoint($large) {
+        @include span(1/5);
+    }
+}
+
+.kolona-kontakt {
+    .grupa {
+        @include breakpoint($medium) {
+            @include span(1/2);
+        }
+        @include breakpoint($tablet) {
+            padding-left: 20px;
+        }
+    }
+    @include breakpoint($large) {
+        @include span(2.4/5);
+        .grupa {
+            @include span(1/2);
+        }
+    }
+}
+
+.kolona-partneri {
+    padding-left: 10px;
+    width: 100%;
+    img {
+        @include span(0.9/2, $cycle: 2, $uncycle: 2);
+    }
+    @include breakpoint($medium) {
+        padding-left: 0;
+        img {
+            @include span(0.9/3, $cycle: 3, $uncycle: 3);
+        }
+    }
+    @include breakpoint($tablet) {
+        @include span(5/5);
+        img {
+            @include span(0.8/6);
+        }
+    }
+    @include breakpoint($large) {
+        @include span(4/5);
+    }
+}
+
+.social {
+    padding-bottom: 10px;
+    width: 290px;
+    height: 40px;
+    margin: 0 auto;
+    @include breakpoint($large) {
+        width: 230px;
+    }
+    a {
+        width: 34px;
+        height: 34px;
+        float: left;
+        padding: 5px;
+        margin-right: 10px;
+        @include breakpoint($large) {
+            width: 30px;
+            height: 30px;
+            padding: 7px;
+            margin-right: 4px;
+        }
+        img {
+            width: auto;
+            height: 24px;
+            @include breakpoint($large) {
+                height: 16px;
+            }
+        }
+    }
+}
+
+.footer img[src|="img/partneri"] {
+    float: left;
+    margin: 1.5%;
+    margin-bottom: 10px;
+    @include breakpoint($large) {
+        width: 15.333%;
+        margin: 0 5px;
+        float: left;
+    }
+}
+
+// STRANE-----------------
+.sidebar {
+    @include stack();
+    @include unshift();
+    @include breakpoint($medium) {
+        @include span(1/4);
+        @include shift(-3/4, span);
+    }
+}
+
+.sadrzaj {
+    @include stack();
+    @include unshift();
+    @include breakpoint($medium) {
+        @include span(3/4);
+        @include shift(1/4, span);
+    }
+}
+ // PAKETI-BOX-----------------
+ .paket{
+    @include column(1/3, $gutter: 1.5);
+ }

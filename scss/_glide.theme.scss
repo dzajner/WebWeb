@@ -1,0 +1,139 @@
+// -- SLIDER
+.glide__slide {
+    width: 100%;
+    height: 500px;
+    @include breakpoint($medium $large) {
+        background-position: -350px;
+        background-repeat: no-repeat;
+    }
+}
+
+.glide__slide.prvi {
+    background-image: url(../img/slider-1.jpg);
+    @include breakpoint(max-width $medium) {
+       background-image: url(../img/slider-1s.jpg); 
+    }
+}
+
+.glide__slide.drugi {
+    background-image: url(../img/slider-2.jpg);
+    @include breakpoint(max-width $medium) {
+        background-image: url(../img/slider-2s.jpg);
+    }
+}
+
+.glide__slide.treci {
+    background-image: url(../img/slider-3.jpg);
+    @include breakpoint(max-width $medium) {
+        background-image: url(../img/slider-3s.jpg);
+    }
+}
+
+.glide__slide.cetvrti {
+    background-image: url(../img/slider-4.jpg);
+    @include breakpoint(max-width $medium) {
+        background-image: url(../img/slider-4s.jpg);
+    }
+}
+
+.glide__slide .text {
+    position: absolute;
+    display: block;
+    text-align: left;
+    // width: 13%;
+    padding: 0 0 20px 20px;
+    top: 1.5rem;
+    font-weight: 700;
+    background-color: rgba(234, 234, 234, 0.5);
+    @include breakpoint($medium) {
+        max-width: 540px;
+        margin-left: 1.4%;
+    }
+    p {
+        width: 95%;
+        margin: 0;
+    }
+}
+
+.glide__slide a {
+    position: absolute;
+    margin-left: 2%;
+    top: 350px;
+    font-size: 2rem;
+    background-color: rgba(21, 21, 21, 0.8);
+    line-height: 28px;
+    padding: 0.7rem;
+    display: block;
+    transition: $trisek;
+    &:hover {
+        background-color: $narandzasta;
+    }
+    @include breakpoint(max-height 500px) {
+        top: 230px;
+    }
+    @include breakpoint(max-width 500px) {
+        top: 300px;
+    }
+}
+
+.glide-nav {
+    top: -70px;
+    list-style: none;
+    float: left;
+    height: 55px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    max-height: 65px;
+    padding: 20px;
+    @include breakpoint(max-width $medium) {
+        display: none;
+    }
+    a {
+        float: left;
+        display: inline-block;
+        padding: 5px;
+        cursor: $cursor-p;
+        text-align: center;
+        transition: $trisek;
+        // background-color: rgba(234, 234, 234, .7);
+        background-color: $svetla;
+        position: relative;
+        width: 25%;
+        font-size: 1.3rem;
+        height: 55px;
+        color: $tamna;
+        opacity: .8;
+        &:hover {
+            height: 65px;
+            transform: translateY(-15px);
+            z-index: 5;
+            // top: -10px;
+            opacity: 1;
+        }
+    }
+    em {
+        display: block;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 500;
+    }
+}
+
+.glide-nav > *.active {
+    transform: translateY(-5px);
+    background-image: $narandzasti-gradient;
+    height: 55px;
+}
+
+.glide-nav > *:hover {
+    background-image: $narandzasti-gradient;
+}
+
+.glide__track {
+    max-height: 500px;
+    @include breakpoint(max-width $mobile) {
+    height: 400px;
+  }
+}

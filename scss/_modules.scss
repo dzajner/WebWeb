@@ -1,0 +1,804 @@
+// -- HEADER
+.header {
+    @include breakpoint($tablet) {
+        background-image: $svetli-gradient;
+    }
+}
+
+// -- GORNJI MENI
+.gornji-meni {
+    background-image: url(../img/header-bg.png);
+    background-position: 180px top;
+    background-repeat: no-repeat;
+    @include breakpoint($tablet) {
+        background-image: none;
+    }
+}
+
+.o-s-link {
+    cursor: $cursor-p;
+    span:before {
+        content: "+";
+        margin-left: 7px;
+        color: $narandzasta;
+    }
+}
+
+.o-s-link.open {
+    color: $svetla;
+    span:before {
+        content: "-";
+    }
+}
+
+.ostali-sajtovi {
+    background-color: $svetla;
+    z-index: 600;
+    // list-style-type: none;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
+    a {
+        width: 100%;
+        display: block;
+    }
+}
+
+.o-s-link.open .ostali-sajtovi {
+    display: block;
+    opacity: 1;
+}
+
+.gornji-meni .down {
+    cursor: $cursor-p;
+}
+
+.close .flipper,
+.close .flipper {
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+}
+
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    width: 24px;
+    height: 24px;
+    position: relative;
+}
+
+.front,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+}
+
+.front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.back {
+    z-index: -1;
+    transform: rotateY(180deg);
+}
+
+.close .back {
+    transform: rotateY(180deg);
+}
+
+.close .front {
+    transform: rotateY(0deg);
+}
+
+.gornji-meni-full {
+    @include breakpoint($tablet) {
+        background-color: $tamna;
+    }
+}
+
+.gornji-submeni {
+    @extend %meni;
+    @extend %skriveni-meni;
+    background-color: $tamna;
+    transition: 0.5s ease-in-out;
+    height: 0;
+    @include breakpoint($tablet) {
+        opacity: 1;
+        // background-color: transparent;
+        height: auto;
+    }
+    li {
+        height: 0px;
+        overflow: hidden;
+        display: block;
+        transition: 0.5s ease-in-out;
+        border-bottom: 1px solid $svetla;
+        padding-top: 3px;
+        @include breakpoint($tablet) {
+            padding-right: 0.9rem;
+            height: auto;
+            display: inline-block;
+            border-bottom: none;
+        }
+        a {
+            height: 0%;
+        }
+    }
+    &.open {
+        opacity: 1;
+        height: 150px;
+        li {
+            transition: 0.5s;
+            height: 30px;
+            a {
+                display: block;
+                height: auto;
+            }
+        }
+    }
+}
+
+.header-content {
+    @include breakpoint($tablet) {
+        background-image: url(../img/header-bg.png);
+        background-repeat: no-repeat;
+        background-position: 275px;
+        @include breakpoint($large) {
+            background-position: right;
+        }
+    }
+}
+
+.tel-chat-wide {
+    div a {
+        background-repeat: no-repeat;
+        background-size: 20px;
+        padding-left: 25px;
+    }
+    .mob a {
+        background-image: url(../img/mob.png);
+        &:hover {
+            background-image: url(../img/mob-light.png);
+        }
+    }
+    .mail a {
+        background-image: url(../img/mail.png);
+        &:hover {
+            background-image: url(../img/mail-light.png);
+        }
+    }
+    .chat a {
+        background-image: url(../img/chat.png);
+        &:hover {
+            background-image: url(../img/chat-light.png);
+        }
+    }
+}
+
+// -- GLAVNI MENI
+.menu-wrapper {
+    height: 44px;
+    background-color: $tamna;
+    box-shadow: 0px 16px 15px 1px rgba(0, 0, 0, 0.4);
+    // border-top: 1px solid $tamna;
+    @include breakpoint($tablet) {
+        // box-shadow: none;
+        // background: $tamna;
+        height: auto;
+        // border: none;
+    }
+}
+
+.glavni-meni {
+    @extend %meni;
+    @extend %skriveni-meni;
+    width: 100%;
+    // background: $tamna;
+    position: relative;
+    display: block;
+    z-index: 200;
+    transition: all 0.4s cubic-bezier(1, -0.02, 1, 0.76);
+    @include breakpoint($tablet) {
+        overflow: visible;
+        opacity: 1;
+        @include center(900px);
+        width: auto;
+    }
+    @include breakpoint($large) {
+        max-width: 1200px;
+    }
+}
+
+.big-meni {
+    background: $svetli-gradient;
+    box-shadow: 0px 11px 10px 1px rgba(0, 0, 0, 0.4);
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: $trisek;
+    height: 0;
+    overflow: hidden;
+    z-index: -100;
+    border-bottom: 2px solid $narandzasta;
+    ul {
+        padding-left: 15px;
+    }
+    li {
+        @extend %symbol-list;
+        a {
+            text-transform: none;
+            background-repeat: no-repeat;
+            background-position: 0 5px;
+        }
+        &:hover {
+            background-image: url(../img/big-meni-bullet-over.png);
+        }
+    }
+}
+
+li.open .big-meni {
+    height: auto;
+    opacity: 1;
+    display: block;
+    color: $tamna;
+    z-index: 150;
+    background: transparent;
+    box-shadow: none;
+    transform: translateY(0);
+    border-top: 1px solid $tamna;
+    .meni-slika {
+        display: none;
+    }
+}
+
+.meni-slika {
+    transition: $trisek;
+    &:hover {
+        filter: contrast(140%) saturate(180%);
+    }
+}
+
+.glavni-meni > li {
+    border-bottom: 1px solid $narandzasta;
+    display: block;
+    height: 35px;
+    padding-top: 6px;
+    transition: $trisek;
+    background-color: $tamna;
+    .meni-down {
+        cursor: pointer;
+        float: right;
+        margin-right: 20px;
+        // display: block;
+        width: 20px;
+        height: 20px;
+        padding-top: 10px;
+        background-image: url(../img/down-svetla.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 60%;
+        z-index: 160;
+        @include breakpoint($tablet) {
+            display: none;
+            height: 0;
+        }
+        &.close {
+            background-image: url(../img/up-svetla.png);
+        }
+    }
+    &.open {
+        background-color: $narandzasta;
+        height: auto;
+        a {
+            padding-bottom: 5px;
+            display: inline-block;
+            &:hover {
+                color: $tamna;
+            }
+        }
+        span {
+            content: "-";
+        }
+    }
+    @include breakpoint($tablet) {
+        &.active {
+            border-bottom: 2px solid $narandzasta;
+        }
+        float: left;
+        display: inline-block;
+        border-bottom: none;
+        padding: 0.47%;
+        a {
+            line-height: 25px;
+        }
+        &:hover {
+            background-color: $narandzasta;
+        }
+    }
+    @include breakpoint($large) {
+        padding: 6px 1.46%;
+        a {
+            line-height: 23px;
+        }
+    }
+}
+
+@include breakpoint($tablet) {
+    .glavni-meni > li:hover > a {
+        color: $svetla;
+    }
+}
+
+@include breakpoint($tablet) {
+    .glavni-meni li:hover .big-meni {
+        display: block;
+        opacity: 1;
+        transform: translateY(0px);
+        height: auto;
+        padding: 10px;
+    }
+}
+
+.glavni-meni.open {
+    position: relative;
+    min-height: 281px;
+    height: 79%;
+    overflow-y: scroll;
+    width: 100%;
+    opacity: 1;
+    transition: all .5s cubic-bezier(0.14, 1.02, 0.65, 1.06);
+    border-top: 1px solid $narandzasta;
+}
+
+.meni-icon {
+    position: relative;
+    float: left;
+    left: 10px;
+    top: 10px;
+    width: 35px;
+    height: 30px;
+    transition-duration: 0.5s;
+    transform: rotate(0deg);
+    cursor: $cursor-p;
+    display: block;
+    @include breakpoint($tablet) {
+        display: none;
+    }
+}
+
+.meni-icon span {
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background: $svetla;
+    border-radius: 6px;
+    transform: rotate(0deg);
+    transition-duration: 0.15s;
+    &:nth-child(1) {
+        transform-origin: left center;
+        top: 0px;
+    }
+    &:nth-child(2) {
+        transform-origin: left center;
+        top: 10px;
+    }
+    &:nth-child(3) {
+        transform-origin: left center;
+        top: 20px;
+    }
+}
+
+.meni-icon.close span {
+    &:nth-child(1) {
+        transform: rotate(45deg);
+        top: -3px;
+        left: 8px;
+    }
+    &:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+    }
+    &:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 22px;
+        left: 8px;
+    }
+}
+
+// -- IKONICE
+.ikonice {
+    float: right;
+    height: 100%;
+    margin-right: 15px;
+    img {
+        padding: 10px 0 10px 15px;
+        margin-left: 10px;
+        height: 100%;
+    }
+    @include breakpoint ($tablet) {
+        display: none;
+    }
+}
+
+.meni-grupa ul li {
+    display: block;
+    margin: 4px 0;
+    a {
+        line-height: 25px;
+    }
+}
+
+// -- TXT BOX
+.text-box {
+    @include breakpoint($tablet) {
+        border-bottom: none;
+    }
+}
+
+.text-box:last-child {
+    border-bottom: none;
+}
+
+// -- PAKETI
+.paketi-slike {
+    figure {
+        overflow: hidden;
+        * {
+            transition: $trisek;
+        }
+        figcaption {
+            background-color: rgba(247, 125, 23, 0.7);
+            padding: 10px;
+        }
+        &:hover figcaption {
+            height: 75px;
+            background-color: rgba(247, 125, 23, 0.95);
+        }
+        img {
+            transform: scale(1);
+        }
+        &:hover img {
+            transform: scale(1.15);
+        }
+        h4 {
+            margin: 0;
+        }
+        &:hover h4 {
+            padding-left: 20px;
+            padding-bottom: 5px;
+            transform: scale(1.15);
+        }
+        h5 {
+            margin: 0;
+        }
+        &:hover h5 {
+            transform: scale(1.15);
+            padding-left: 20px;
+        }
+        span {
+            opacity: 0;
+        }
+        &:hover span {
+            opacity: 1;
+            transform: translate3d(-70px, 0, 0);
+            transition: transform 0.35s;
+        }
+    }
+}
+
+// -- KATEGORIJE
+.kategorija {
+    transition: $trisek;
+    cursor: $cursor-p;
+    @include breakpoint($mobile) {
+        border-bottom: none;
+    }
+    a {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: all 0.6s;
+        opacity: 0;
+        bottom: -100%;
+    }
+    span {
+        opacity: 0;
+        transition: $trisek;
+        color: $svetla;
+    }
+    svg {
+        transition: $trisek;
+        fill: $tamna;
+    }
+    &:hover {
+        color: $narandzasta;
+        a {
+            bottom: 0;
+            opacity: 1;
+        }
+        span {
+            opacity: 1;
+            color: $tamna;
+        }
+        svg {
+            transform: rotateY(360deg);
+            fill: $narandzasta;
+            backface-visibility: hidden;
+        }
+    }
+    &:focus {
+        color: $narandzasta;
+        a {
+            bottom: 0;
+            opacity: 1;
+        }
+        span {
+            opacity: 1;
+            color: $tamna;
+        }
+        svg {
+            transform: rotateY(360deg);
+            fill: $narandzasta;
+            backface-visibility: hidden;
+        }
+    }
+}
+
+.kategorija h2,
+.kategorija svg,
+.kategorija p {
+    pointer-events: none;
+}
+
+// -- TOP FOOTER
+.top-footer {
+    background: $svetli-gradient;
+    box-shadow: 0px -1px 16px 1px rgba(0, 0, 0, 0.4);
+    a {
+        background: $tamni-gradient;
+        transition: $trisek;
+        color: $svetla;
+    }
+    a:hover {
+        background: $narandzasti-gradient;
+    }
+}
+
+// -- FOOTER
+.footer {
+    background-color: $tamna;
+    h3 {
+        border-bottom: 1px solid $narandzasta;
+        padding: 0 0 5px 30px;
+        margin-bottom: 0.5rem 0;
+    }
+}
+
+.footer-kolona.linkovi h3 {
+    @include breakpoint ($large) {
+        padding-right: 30px;
+        display: inline-block;
+    }
+}
+
+.footer ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+    list-style-type: disc;
+    margin-left: 20px;
+    @include breakpoint($tablet) {
+        margin-left: 0;
+    }
+    color: $svetla;
+    li {
+        padding: 2px 0;
+    }
+    &.no-bullets {
+        list-style-type: none;
+    }
+}
+
+.footer a:hover {
+    color: $narandzasta;
+}
+
+.kolona-kontakt h3 {
+    @include breakpoint ($tablet) {
+        text-align: center;
+    }
+}
+
+.kolona-kontakt ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.social a {
+    background-color: $svetla;
+    &:hover {
+        background-color: $narandzasta;
+    }
+}
+
+.kolona-partneri h3 {
+    border-bottom: 1px solid $narandzasta;
+    margin-bottom: 0.5rem;
+    padding: 0 0px 5px 30px;
+}
+
+.bottom-footer {
+    background-color: $narandzasta;
+}
+
+.viber {
+    color: #7D519E;
+}
+
+.whatsapp {
+    color: #3BBB28;
+}
+
+.skype {
+    color: #00AFF0;
+}
+
+// -- MODAL FORMA
+.remodal form select,
+.remodal form input,
+.remodal form textarea {
+    width: 100%;
+    max-width: 300px;
+    @extend %center;
+    border-radius: 0;
+    margin-bottom: 0.5rem;
+    border: none;
+    background-color: #D3D3D3;
+    border: 1px solid #ADADAD;
+    padding-left: 0.3rem;
+    transition: all 0.4s ease-in-out;
+}
+
+.remodal form select:focus,
+.remodal form input:focus,
+.remodal form textarea:focus {
+    box-shadow: 0 0 8px $narandzasta;
+    border: 1px solid rgba($narandzasta, 0.8);
+    outline: 0;
+}
+
+.remodal form select,
+.remodal form input {
+    height: 2rem;
+}
+
+.remodal form select {
+    background: url(../img/dropdown.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    appearance: none;
+    width: 100%;
+}
+
+// PARALLAX BACKGROUND
+.parallax {
+    @extend %skriveno;
+    @include breakpoint(min-width 1800px) {
+        display: block;
+        opacity: 1;
+    }
+}
+
+.bg {
+    background-image: url(../img/bg-front.png);
+    z-index: -1;
+}
+
+.bg2 {
+    background-image: url(../img/bg-back.png);
+    z-index: -2;
+}
+
+.bg,
+.bg2 {
+    position: absolute;
+    width: 100%;
+    // height: 2100px;
+    background-repeat: repeat-y;
+    // background-position: center center;
+    background-size: contain;
+}
+
+// HELPER CLASS FOOTER
+@include breakpoint(max-width 369px) {
+    .hide {
+        display: none;
+    }
+    .top-footer .center {
+        width: 250px;
+    }
+}
+
+// SADRZAJ
+.sadrzaj {
+    padding: 10px;
+    padding-left: 30px;
+    background-color: #fff;
+    img {
+        width: 100%;
+    }
+}
+
+//  HERO
+.hero {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    background-image: url(../img/hero-izrada-sajta.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+}
+
+// SIDEBAR
+.sidebar li {
+    @extend %symbol-list;
+    display: block;
+}
+
+// HERO
+.hero-txt {
+    position: absolute;
+    top: 10px;
+    z-index: 500;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.sitemap {
+    display: block;
+    text-align: center;
+    a {
+        padding-right: 10px;
+    }
+}
+
+.sidebar-pitanja {
+    background-color: $narandzasta;
+}
+
+.sidebar-baneri img {
+    width: 100%;
+}
+
+// PAKETI-BOX-----------------
+.paket {
+    background-color: $tamna;
+    color: $svetla;
+    transition: 0.3s;
+    h4 {
+        margin: 0 10%;
+        padding: 10px 0;
+        border-top: 1px solid $narandzasta;
+        border-bottom: 1px solid $narandzasta;
+    }
+    ul {
+        margin: 10px 0;
+        li {
+            height: 25px;
+            line-height: 25px;
+            &:nth-child(even) {
+                background-color: #232323;
+            }
+        }
+    }
+    &:hover{
+        transform: scale(1.04);
+        box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.75);
+    }
+}

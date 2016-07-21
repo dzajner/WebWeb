@@ -1,0 +1,269 @@
+@import "variables";
+body {
+    font-family: 'Exo', 'Arial', 'Sans serif';
+    color: $tamna;
+}
+
+h1 {
+    margin: 0.67rem 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding-bottom: 1rem;
+    margin-top: 1.2rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.45rem;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1.25rem;
+    text-indent: 1rem;
+}
+
+// HEADER  --------------------------------------
+.header a {
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: $svetla;
+    @include breakpoint($tablet) {
+        font-size: 1.1rem;
+    }
+    @include breakpoint($large) {
+        font-size: 1.2rem;
+    }
+    &:active {
+        color: $narandzasta;
+    }
+    &:hover {
+        color: $narandzasta;
+    }
+}
+
+.gornji-meni .o-s-link {
+    color: $narandzasta;
+    font-size: 1.2rem;
+}
+
+.ostali-sajtovi a {
+    color: $tamna;
+    padding: 1px 10px;
+    &:hover {
+        background-color: $narandzasta;
+        color: $svetla;
+    }
+}
+
+.tel-chat-wide a {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: $tamna;
+    &:hover {
+        color: $svetla;
+    }
+}
+
+.big-meni {
+    h3 {
+        color: $narandzasta;
+    }
+    a {
+        font-size: 1.19rem;
+        font-weight: 500;
+        color: $tamna;
+        &:hover {
+            color: $narandzasta;
+        }
+        @include breakpoint($large) {
+            font-size: 1.35rem;
+        }
+    }
+}
+
+.glavni-meni a {
+    text-transform: uppercase;
+    @include breakpoint($large) {
+        font-weight: 600;
+    }
+}
+
+// SLIDER ---------------------------
+.glide .text {
+    h3 {
+        color: $narandzasta;
+        font-size: 2.5rem;
+    }
+    p {
+        color: $tamna;
+        font-size: 1.6rem;
+        font-weight: 600;
+        text-indent: 0;
+    }
+    @include breakpoint($medium) {
+        h3 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.6rem;
+            text-indent: 0;
+        }
+    }
+}
+
+.kategorija h2 {
+    margin: 0.8rem 0;
+    font-size: 1.6rem;
+    @include breakpoint($mobile) {
+        line-height: 1.9rem;
+    }
+}
+
+.kategorije a,
+.kategorija a:before {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.kategorija p {
+    text-align: center;
+}
+
+.paketi-slike {
+    h4 {
+        font-size: 1.5rem;
+        color: $svetla;
+    }
+    span {
+        font-size: 1.4rem;
+    }
+}
+
+// FOOTER
+.top-footer a {
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 14px;
+    color: $tamna;
+    @include breakpoint($tablet) {
+        font-size: 1.4rem;
+    }
+}
+
+.footer-kolona h3,
+.kolona-partneri h3,
+.kolona-kontakt h3 {
+    color: $narandzasta;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+.footer {
+    font-size: 1.25rem;
+    a {
+        color: $svetla;
+    }
+    ul {
+        font-weight: 300;
+    }
+    p {
+        color: $svetla;
+        font-size: 1.4rem;
+    }
+    .sajt-link {
+        color: $narandzasta;
+        text-align: center;
+        font-size: 1.5rem;
+        padding-left: 15px;
+        &:hover {
+            color: $svetla;
+        }
+    }
+}
+
+.kolona-kontakt {
+    ul span {
+        color: $svetla;
+        text-align: right;
+    }
+}
+
+.bottom-footer p {
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 2px;
+    text-align: center;
+}
+
+//    MODAL
+.remodal h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    padding-bottom: 0.2rem;
+}
+
+.naslov-strane {
+    font-size: 3rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+// SIDEBAR
+.sidebar h2 {
+    color: $narandzasta;
+    text-align: left;
+    margin-left: 15px;
+    font-size: 1.7rem;
+}
+
+.sidebar ul {
+    @extend %meni;
+    li {
+        display: block;
+        text-align: left;
+    }
+}
+
+.sidebar a {
+    font-size: 1.3rem;
+    padding-bottom: 1.5rem;
+    color: $tamna;
+    &:hover {
+        color: $narandzasta;
+    }
+}
+
+// PAKETI-BOX-----------------
+.paket {
+    * {
+        text-align: center;
+        color: $svetla;
+    }
+    h3 {
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin: 1.1rem 0;
+    }
+    h4{
+        color: $narandzasta;
+        font-size: 1.5rem;
+        font-weight: 400;
+        span {
+            font-size: 1.3rem;
+            padding-left: 10px;
+        }
+    }
+    a{
+       font-size: 1.6rem;
+        font-weight: 600; 
+        display: block;
+        background-color: $narandzasta;
+        padding: 10px 0;
+        // margin: 2px;
+    }
+}

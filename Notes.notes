@@ -1,0 +1,46 @@
+
+
+# Sredi sve 3rd party plugin-ove
+# Google font samo oni koje imamo
+# Posle minificiranja CSS-a spoji mediaqueries
+# o nama
+# kontakt
+# cenovnik
+# ikonice u headeru kao sprites za performanse
+# namikari header responsivnes iznad mob velicine
+# vidi postcss fore za sredjivanje css-a TREBA izmedju ostalog spajanje istih deklaracija
+
+- Back to top ?
+- doteraj logo jos
+- i umesto strelice dole na gornjem meniju - FIX na IE10
+
+
+-----------------
+---BREAKPOINTS----
+
+width 600px - slider bullets / nestaju
+width 600px - fotter se transformise
+height 500px - slider je nizi
+width ~ 369px - linkovi u top footeru staju u jedan red
+
+
+figcaption-65px - ukupno padding po 10px gore i dole
+
+-----------------------
+
+# ostali sajtovi se ne vidi 
+
+# ako glavni.meni.open (_modules:345) skinemo height:auto onda bude scrollabilno ali visine kao neotvoren meni
+
+------------------------------------------------------------
+    URADITI !								
+-----------------------------------------------------------
+
+1. popravi sto si zasro [vrati na staro]  <✓>
+2. <git>
+3. --- ORGANIZACIJA CSS-a ---
+4. Sredi meni
+
+
+
+
