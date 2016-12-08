@@ -1,0 +1,18 @@
+#toTop {
+    display: none;
+    position: fixed;
+    bottom: 45px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-image: url('../img/up-arrow.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+    transition: $trisek;
+}
+#toTop:hover {
+    opacity: 1;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+}

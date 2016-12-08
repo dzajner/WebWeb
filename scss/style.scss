@@ -19,7 +19,9 @@ $large: 1200px;
 @import "flexisel";
 @import "remodal";
 @import "remodal-theme";
-@import "modules";
+@import "scroll-to-top";
+
+@import "modules/modules";
 @import "helpers";
 
 html, body{

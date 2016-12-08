@@ -315,22 +315,22 @@ th {
   overflow: hidden;
 }
 
-.tekstovi, .paketi-slike, .kategorije, .klijenti {
+.tekstovi, .paketi-slike, .kategorije, .klijenti, .paketi {
   *zoom: 1;
   margin: 0 10px;
 }
 
-.tekstovi:before, .paketi-slike:before, .kategorije:before, .klijenti:before, .tekstovi:after, .paketi-slike:after, .kategorije:after, .klijenti:after {
+.tekstovi:before, .paketi-slike:before, .kategorije:before, .klijenti:before, .paketi:before, .tekstovi:after, .paketi-slike:after, .kategorije:after, .klijenti:after, .paketi:after {
   content: '';
   display: table;
 }
 
-.tekstovi:after, .paketi-slike:after, .kategorije:after, .klijenti:after {
+.tekstovi:after, .paketi-slike:after, .kategorije:after, .klijenti:after, .paketi:after {
   clear: both;
 }
 
 .kategorije svg, .kategorija a,
-.kategorija a:before, .footer-kolona.beli-logo img, .remodal form select,
+.kategorija a:before, .remodal form select,
 .remodal form input,
 .remodal form textarea {
   display: block;
@@ -340,7 +340,7 @@ th {
 .big-meni li, .sidebar li {
   background-image: url(../img/big-meni-bullet.png);
   background-repeat: no-repeat;
-  background-position: 0 5px;
+  background-position: 0 6px;
   text-align: left;
   padding-left: 15px;
 }
@@ -352,9 +352,6 @@ body {
 
 h1 {
   margin: 0.67rem 0;
-}
-
-h1 {
   text-align: center;
   font-size: 1.8rem;
   font-weight: 700;
@@ -391,11 +388,7 @@ p {
   }
 }
 
-.header a:active {
-  color: #f77d17;
-}
-
-.header a:hover {
+.gornji-submeni a:hover {
   color: #f77d17;
 }
 
@@ -506,6 +499,43 @@ p {
   font-size: 1.4rem;
 }
 
+.hero h1 {
+  color: #f77d17;
+}
+
+.sitemap,
+.sitemap a {
+  color: #EAEAEA;
+}
+
+.sitemap a:hover {
+  color: #f77d17;
+}
+
+.sadrzaj h4,
+.sadrzaj h2,
+.sadrzaj h3 {
+  text-align: center;
+  color: #f77d17;
+  font-weight: 800;
+}
+
+.sadrzaj h2 {
+  font-size: 2rem;
+}
+
+.sadrzaj h3 {
+  font-size: 1.7rem;
+}
+
+.sadrzaj h4 {
+  font-size: 1.4rem;
+}
+
+.sadrzaj p, .sadrzaj ul {
+  font-size: 1.25rem;
+}
+
 .top-footer a {
   font-size: 1.2rem;
   text-align: center;
@@ -580,10 +610,15 @@ p {
 }
 
 .sidebar h2 {
-  color: #f77d17;
-  text-align: left;
-  margin-left: 15px;
-  font-size: 1.7rem;
+  color: #151515;
+  text-align: center;
+  padding-left: 15px;
+  font-size: 1.4rem;
+  margin: 0.1rem 0;
+}
+
+.sidebar ul {
+  padding-left: 5px;
 }
 
 .sidebar ul li {
@@ -592,13 +627,9 @@ p {
 }
 
 .sidebar a {
-  font-size: 1.3rem;
-  padding-bottom: 1.5rem;
-  color: #151515;
-}
-
-.sidebar a:hover {
-  color: #f77d17;
+  font-size: 1.2rem;
+  padding-bottom: 1.4rem;
+  color: #EAEAEA;
 }
 
 .paket * {
@@ -662,10 +693,6 @@ p {
   clear: both;
 }
 
-.container h1 {
-  margin: 10px;
-}
-
 .gornji-meni-full {
   height: auto;
 }
@@ -673,17 +700,7 @@ p {
 @media (min-width: 899px) {
   .gornji-meni-full {
     height: 25px;
-    overflow: hidden;
-  }
-}
-
-.gornji-meni {
-  min-height: 55px;
-}
-
-@media (max-width: 899px) {
-  .gornji-meni {
-    padding-top: 26px;
+    overflow: visible;
   }
 }
 
@@ -721,25 +738,13 @@ p {
   }
 }
 
-.o-s-link {
-  display: none;
-}
-
-@media (min-width: 899px) {
-  .o-s-link {
-    display: inline-block;
-    padding-top: 3px;
-    margin-left: 280px;
-  }
-}
-
 .gornji-submeni {
   width: 100%;
 }
 
 @media (min-width: 899px) {
   .gornji-submeni {
-    width: 30%;
+    width: 39%;
     display: block;
     height: auto;
     position: static;
@@ -1077,7 +1082,6 @@ p {
 
 .kategorija {
   overflow: hidden;
-  position: relative;
 }
 
 @media (min-width: 460px) {
@@ -1159,7 +1163,6 @@ p {
 
 .kategorije svg {
   width: 15%;
-  max-height: 70px;
 }
 
 .kategorija a,
@@ -1321,6 +1324,8 @@ p {
     text-align: center;
   }
   .footer-kolona.beli-logo img {
+    display: block;
+    margin: 0 auto;
     padding-top: 1rem;
     max-width: 400px;
   }
@@ -1687,27 +1692,110 @@ p {
   }
 }
 
-.paket {
-  *zoom: 1;
-  float: left;
-  clear: none;
-  text-align: inherit;
-  width: 32.33333%;
-  margin-left: 0%;
-  margin-right: 1.5%;
+@media (min-width: 460px) {
+  .paket {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 48.5%;
+    margin-left: 0%;
+    margin-right: 3%;
+  }
+  .paket:before, .paket:after {
+    content: '';
+    display: table;
+  }
+  .paket:after {
+    clear: both;
+  }
+  .paket:nth-child(2n) {
+    margin-right: 0%;
+    float: right;
+  }
+  .paket:nth-child(2n + 1) {
+    clear: both;
+  }
 }
 
-.paket:before, .paket:after {
-  content: '';
-  display: table;
+@media (min-width: 1000px) {
+  .paket {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 24.25%;
+    margin-left: 0%;
+    margin-right: 1%;
+  }
+  .paket:before, .paket:after {
+    content: '';
+    display: table;
+  }
+  .paket:after {
+    clear: both;
+  }
+  .paket:nth-child(2n) {
+    margin-right: 1%;
+    float: left;
+  }
+  .paket:nth-child(2n + 1) {
+    clear: none;
+  }
+  .paket:last-child {
+    margin-right: 0%;
+  }
 }
 
-.paket:after {
-  clear: both;
+@media (min-width: 620px) {
+  .kontakt-podaci {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 42.85714%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+  .kontakt-podaci:before, .kontakt-podaci:after {
+    content: '';
+    display: table;
+  }
+  .kontakt-podaci:after {
+    clear: both;
+  }
 }
 
-.paket:last-child {
-  margin-right: 0%;
+@media (min-width: 620px) {
+  .kontakt-forma {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 42.85714%;
+    margin-left: 0%;
+    margin-right: 0%;
+    position: relative;
+    left: 5.15%;
+  }
+  .kontakt-forma:before, .kontakt-forma:after {
+    content: '';
+    display: table;
+  }
+  .kontakt-forma:after {
+    clear: both;
+  }
+}
+
+.log-in-wrapper {
+  max-width: 430px;
+  margin: 5px auto;
+}
+
+@media (min-height: 520px) {
+  .log-in-wrapper {
+    margin-top: 5%;
+  }
 }
 
 .glide {
@@ -1886,6 +1974,7 @@ p {
   position: absolute;
   display: block;
   text-align: left;
+  width: 13%;
   padding: 0 0 20px 20px;
   top: 1.5rem;
   font-weight: 700;
@@ -1915,6 +2004,7 @@ p {
   display: block;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  color: #EAEAEA;
 }
 
 .glide__slide a:hover {
@@ -2168,12 +2258,19 @@ html.remodal-is-locked {
 }
 
 /* Necessary styles of the modal dialog */
-.remodal {
+.remodal.svetli {
   position: relative;
   outline: none;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
+}
+
+.remodal.tamni {
+  position: absolute;
+  left: 0;
+  top: 0;
+  outline: none;
 }
 
 .remodal-is-initialized {
@@ -2231,11 +2328,95 @@ html.remodal-is-locked {
 .remodal {
   width: 100%;
   margin-bottom: 10px;
-  padding: 1rem;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+}
+
+.remodal.svetli {
+  padding: 1rem;
   color: #151515;
   background: #EAEAEA;
+}
+
+.remodal.tamni {
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: #EAEAEA;
+  height: 100%;
+  padding: 0;
+  text-align: left;
+}
+
+.remodal.tamni h3 {
+  font-size: 2rem;
+  color: #f77d17;
+  margin-bottom: 5px;
+  padding: 9px 10px 0 10px;
+  margin-left: 20px;
+  text-align: left;
+  border-bottom: 1px solid #f77d17;
+  display: inline-block;
+}
+
+.remodal.tamni h4 {
+  clear: both;
+  font-size: 2rem;
+  padding: 10px;
+  margin: 0.3rem 0;
+}
+
+.remodal.tamni p {
+  color: #f77d17;
+}
+
+.remodal.tamni ul {
+  list-style-type: none;
+  text-align: left;
+  padding-left: 1rem;
+}
+
+.remodal.tamni ul span {
+  color: #f77d17;
+}
+
+.remodal.tamni ul img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+@media (min-width: 460px) {
+  .remodal.tamni h3 {
+    font-size: 3.5rem;
+  }
+  .remodal.tamni ul {
+    font-size: 1.1rem;
+    padding-left: 1.5rem;
+  }
+  .remodal.tamni ul br {
+    display: none;
+  }
+  .remodal.tamni ul img {
+    width: 25px;
+  }
+}
+
+@media (min-width: 620px) {
+  .remodal.tamni h3 {
+    font-size: 3.5rem;
+  }
+  .remodal.tamni ul {
+    font-size: 1.2rem;
+    padding-left: 2rem;
+  }
+  .remodal.tamni ul img {
+    width: 32px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .remodal.tamni {
+    padding-left: 10%;
+  }
 }
 
 .remodal.remodal-is-opening,
@@ -2281,6 +2462,11 @@ html.remodal-is-locked {
   border: 0;
   outline: 0;
   background: transparent;
+}
+
+.tamni .remodal-close {
+  top: -3px;
+  right: 0px;
 }
 
 .remodal-close:hover,
@@ -2350,8 +2536,8 @@ html.remodal-is-locked {
    ========================================================================== */
 @-webkit-keyframes remodal-opening-keyframes {
   from {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
     opacity: 0;
   }
   to {
@@ -2363,8 +2549,8 @@ html.remodal-is-locked {
 
 @keyframes remodal-opening-keyframes {
   from {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
     opacity: 0;
   }
   to {
@@ -2381,8 +2567,8 @@ html.remodal-is-locked {
     opacity: 1;
   }
   to {
-    -webkit-transform: scale(0.95);
-    transform: scale(0.95);
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
     opacity: 0;
   }
 }
@@ -2394,8 +2580,8 @@ html.remodal-is-locked {
     opacity: 1;
   }
   to {
-    -webkit-transform: scale(0.95);
-    transform: scale(0.95);
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
     opacity: 0;
   }
 }
@@ -2439,7 +2625,7 @@ html.remodal-is-locked {
 /* Media queries
    ========================================================================== */
 @media only screen and (min-width: 641px) {
-  .remodal {
+  .remodal.svetli {
     max-width: 600px;
   }
 }
@@ -2454,6 +2640,29 @@ html.remodal-is-locked {
   width: 700px;
 }
 
+#toTop {
+  display: none;
+  position: fixed;
+  bottom: 45px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/up-arrow.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  /* For IE8 and earlier */
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#toTop:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  /* For IE8 and earlier */
+}
+
 @media (min-width: 899px) {
   .header {
     background-image: -webkit-linear-gradient(top, #fefefe, #cbcbcb);
@@ -2465,6 +2674,9 @@ html.remodal-is-locked {
   background-image: url(../img/header-bg.png);
   background-position: 180px top;
   background-repeat: no-repeat;
+  position: relative;
+  min-height: 55px;
+  height: auto;
 }
 
 @media (min-width: 899px) {
@@ -2474,7 +2686,16 @@ html.remodal-is-locked {
 }
 
 .o-s-link {
+  display: none;
   cursor: pointer;
+}
+
+@media (min-width: 899px) {
+  .o-s-link {
+    display: inline-block;
+    margin-left: 280px;
+    height: auto;
+  }
 }
 
 .o-s-link span:before {
@@ -2509,6 +2730,7 @@ html.remodal-is-locked {
 
 .gornji-meni .down {
   cursor: pointer;
+  margin-top: 25px;
 }
 
 .close .flipper,
@@ -2571,16 +2793,24 @@ html.remodal-is-locked {
 }
 
 .gornji-submeni {
-  background-color: #151515;
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   height: 0;
+  background-color: #151515;
 }
 
 @media (min-width: 899px) {
   .gornji-submeni {
     opacity: 1;
+    background-color: transparent;
     height: auto;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .gornji-submeni {
+    padding-right: 2rem;
   }
 }
 
@@ -2596,6 +2826,7 @@ html.remodal-is-locked {
 
 @media (min-width: 899px) {
   .gornji-submeni li {
+    float: right;
     padding-right: 0.9rem;
     height: auto;
     display: inline-block;
@@ -2667,21 +2898,20 @@ html.remodal-is-locked {
   background-image: url(../img/chat-light.png);
 }
 
-.menu-wrapper {
+.meni-wrapper {
   height: 44px;
   background-color: #151515;
   box-shadow: 0px 16px 15px 1px rgba(0, 0, 0, 0.4);
 }
 
 @media (min-width: 899px) {
-  .menu-wrapper {
+  .meni-wrapper {
     height: auto;
   }
 }
 
 .glavni-meni {
   width: 100%;
-  position: relative;
   display: block;
   z-index: 200;
   -webkit-transition: all 0.4s cubic-bezier(1, -0.02, 1, 0.76);
@@ -2690,6 +2920,7 @@ html.remodal-is-locked {
 
 @media (min-width: 899px) {
   .glavni-meni {
+    position: relative;
     overflow: visible;
     opacity: 1;
     *zoom: 1;
@@ -2744,7 +2975,13 @@ html.remodal-is-locked {
 }
 
 .big-meni li:hover {
-  background-image: url(../img/big-meni-bullet-over.png);
+  background-image: url(../img/big-meni-bullet-beli.png);
+}
+
+@media (min-width: 899px) {
+  .big-meni li:hover {
+    background-image: url(../img/big-meni-bullet-oranz.png);
+  }
 }
 
 li.open .big-meni {
@@ -2784,6 +3021,10 @@ li.open .big-meni .meni-slika {
   background-color: #151515;
 }
 
+.glavni-meni > li:hover {
+  background-color: #f77d17;
+}
+
 .glavni-meni > li .meni-down {
   cursor: pointer;
   float: right;
@@ -2805,13 +3046,13 @@ li.open .big-meni .meni-slika {
   }
 }
 
-.glavni-meni > li .meni-down.close {
-  background-image: url(../img/up-svetla.png);
-}
-
 .glavni-meni > li.open {
   background-color: #f77d17;
   height: auto;
+}
+
+.glavni-meni > li.open li:hover a {
+  color: #EAEAEA;
 }
 
 .glavni-meni > li.open a {
@@ -2819,12 +3060,9 @@ li.open .big-meni .meni-slika {
   display: inline-block;
 }
 
-.glavni-meni > li.open a:hover {
-  color: #151515;
-}
-
 .glavni-meni > li.open span {
   content: "-";
+  background-image: url(../img/up-svetla.png);
 }
 
 @media (min-width: 899px) {
@@ -2873,8 +3111,8 @@ li.open .big-meni .meni-slika {
 
 .glavni-meni.open {
   position: relative;
-  min-height: 281px;
-  height: 79%;
+  height: auto;
+  max-height: 900%;
   overflow-y: scroll;
   width: 100%;
   opacity: 1;
@@ -2981,6 +3219,205 @@ li.open .big-meni .meni-slika {
   line-height: 25px;
 }
 
+.kontakt-container {
+  background-color: #f77d17;
+  margin-bottom: 130px;
+}
+
+.kontakt-podaci {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 2rem;
+}
+
+.lokacija {
+  float: left;
+  margin: 0;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.lokacija h4 {
+  margin: 1rem;
+  margin-left: 0;
+  border-bottom: 1px solid;
+}
+
+.lokacija .adresa {
+  color: #EAEAEA;
+}
+
+.lokacija .mail {
+  clear: both;
+}
+
+.lokacija .mail a {
+  color: #151515;
+}
+
+.lokacija svg {
+  width: 40px;
+  float: left;
+}
+
+.kontakt-forma {
+  background-color: #151515;
+}
+
+.kontakt-forma,
+.log-in-wrapper {
+  color: #f77d17;
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+}
+
+.kontakt-forma h3,
+.log-in-wrapper h3 {
+  text-align: center;
+}
+
+.kontakt-forma label,
+.kontakt-forma input,
+.kontakt-forma textarea,
+.log-in-wrapper label,
+.log-in-wrapper input,
+.log-in-wrapper textarea {
+  display: block;
+  width: 100%;
+}
+
+.kontakt-forma input,
+.kontakt-forma textarea,
+.log-in-wrapper input,
+.log-in-wrapper textarea {
+  background-color: #0e0e0e;
+  outline: 0;
+  border: none;
+  color: #f77d17;
+}
+
+.kontakt-forma label,
+.log-in-wrapper label {
+  color: #EAEAEA;
+  text-align: center;
+  padding: 0.2rem;
+}
+
+.kontakt-forma button[type="submit"],
+.log-in-wrapper button[type="submit"] {
+  background-color: #f77d17;
+  border: none;
+  color: #151515;
+  font-size: 1.5rem;
+  width: 80%;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+}
+
+.sadrzaj {
+  padding: 10px;
+  background-color: #fff;
+}
+
+@media (min-width: 620px) {
+  .sadrzaj {
+    padding-left: 30px;
+  }
+}
+
+.slika-levo {
+  width: 49%;
+  float: left;
+  margin-right: 2%;
+}
+
+.slika-desno {
+  float: right;
+  width: 49%;
+  margin-left: 2%;
+}
+
+.slika-full {
+  width: 100%;
+}
+
+.sadrzaj table {
+  background-color: #151515;
+  color: #EAEAEA;
+  font-size: 1.25rem;
+  display: block;
+  margin: 1.5rem 0;
+}
+
+.sadrzaj table thead {
+  color: #f77d17;
+  height: 20px;
+}
+
+.sadrzaj table th {
+  font-weight: 500;
+  padding: 0.5rem;
+  width: auto;
+}
+
+.sadrzaj table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.09);
+}
+
+.log-in-wrapper form {
+  background-color: #151515;
+  padding: 5%;
+}
+
+.log-in-wrapper form h3 {
+  color: #f77d17;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.log-in-wrapper form label {
+  color: #EAEAEA;
+  display: block;
+  font-size: 1.3rem;
+  text-align: left;
+}
+
+.log-in-wrapper form input {
+  line-height: 2.5rem;
+  font-size: 1.3rem;
+}
+
+.log-in-wrapper form button[type="submit"] {
+  position: relative;
+  top: 35px;
+  margin-top: -20px;
+  margin-left: 10%;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.log-in-wrapper form button[type="submit"]:hover {
+  color: #EAEAEA;
+}
+
+.log-in-wrapper a {
+  margin-top: 20px;
+  display: block;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: #151515;
+  text-align: center;
+  font-size: 1.4rem;
+  margin-top: 5rem;
+}
+
+.log-in-wrapper a:hover {
+  color: #f77d17;
+}
+
 @media (min-width: 899px) {
   .text-box {
     border-bottom: none;
@@ -3068,7 +3505,6 @@ li.open .big-meni .meni-slika {
 }
 
 .kategorija a {
-  position: absolute;
   width: 100%;
   height: 100%;
   -webkit-transition: all 0.6s;
@@ -3316,16 +3752,6 @@ li.open .big-meni .meni-slika {
   }
 }
 
-.sadrzaj {
-  padding: 10px;
-  padding-left: 30px;
-  background-color: #fff;
-}
-
-.sadrzaj img {
-  width: 100%;
-}
-
 .hero {
   height: 200px;
   overflow: hidden;
@@ -3337,8 +3763,66 @@ li.open .big-meni .meni-slika {
   width: 100%;
 }
 
+@media (min-width: 620px) and (max-width: 755px) {
+  .hero {
+    height: 252px;
+    background-size: contain;
+  }
+}
+
+@media (min-width: 620px) {
+  .hero {
+    border-bottom: 6px solid #f77d17;
+    background-size: contain;
+  }
+}
+
+.hero.kontakt {
+  background-image: url(../img/hero-kontakt.jpg);
+}
+
+.sidebar {
+  background-color: #151515;
+}
+
+.sidebar .sb {
+  background-color: #151515;
+}
+
+.sidebar-baneri {
+  background-color: #151515;
+}
+
+.sidebar ul {
+  padding-bottom: 10px;
+}
+
 .sidebar li {
+  background-image: url(../img/big-meni-bullet-beli.png);
   display: block;
+  padding: 3px 0 3px 15px;
+  background-position: 0 8px;
+}
+
+.sidebar li:hover {
+  cursor: pointer;
+  background-image: url(../img/big-meni-bullet-oranz.png);
+}
+
+.sidebar li:hover a {
+  color: #f77d17;
+}
+
+.sidebar h2 {
+  float: left;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.sb .naslov {
+  background-color: #f77d17;
+  margin-bottom: 5px;
 }
 
 .hero-txt {
@@ -3356,20 +3840,43 @@ li.open .big-meni .meni-slika {
   text-align: center;
 }
 
-.sitemap a {
-  padding-right: 10px;
+.paketi-okvir {
+  background-image: url(../img/paketi-okvir.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  padding-bottom: 20px;
+  border-top: 6px solid #151515;
 }
 
-.sidebar-pitanja {
-  background-color: #f77d17;
+.paketi {
+  *zoom: 1;
+  width: auto;
+  max-width: 1200px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.sidebar-baneri img {
-  width: 100%;
+.paketi:before, .paketi:after {
+  content: '';
+  display: table;
+}
+
+.paketi:after {
+  clear: both;
+}
+
+.paketi h3 {
+  font-size: 2rem;
+  text-align: center;
+  color: #f77d17;
 }
 
 .paket {
-  background-color: #151515;
+  background-color: rgba(21, 21, 21, 0.9);
   color: #EAEAEA;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -3384,21 +3891,31 @@ li.open .big-meni .meni-slika {
 
 .paket ul {
   margin: 10px 0;
+  list-style-type: none;
 }
 
 .paket ul li {
-  height: 25px;
   line-height: 25px;
 }
 
 .paket ul li:nth-child(even) {
-  background-color: #232323;
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
-.paket:hover {
-  -webkit-transform: scale(1.04);
-  transform: scale(1.04);
-  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.75);
+@media (min-width: 1200px) {
+  .paket:hover {
+    -webkit-transform: scale(1.04);
+    transform: scale(1.04);
+  }
+}
+
+.paket a {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.paket a:hover {
+  color: #151515;
 }
 
 .clear {

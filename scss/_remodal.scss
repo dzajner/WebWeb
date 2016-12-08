@@ -36,8 +36,8 @@ html.remodal-is-locked {
   right: -5000px;
   bottom: -5000px;
   left: -5000px;
-
   display: none;
+
 }
 
 /* Necessary styles of the wrapper */
@@ -74,7 +74,7 @@ html.remodal-is-locked {
 
 /* Necessary styles of the modal dialog */
 
-.remodal {
+.remodal.svetli {
   position: relative;
   outline: none;
   -webkit-text-size-adjust: 100%;
@@ -82,7 +82,13 @@ html.remodal-is-locked {
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
+.remodal.tamni{
+  position: absolute;
+  left: 0;
+  top: 0;
+  outline: none;
 
+}
 .remodal-is-initialized {
   /* Disable Anti-FOUC */
   display: inline-block;

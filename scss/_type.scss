@@ -1,4 +1,5 @@
 @import "variables";
+// OSNOVNO ------------------------------
 body {
     font-family: 'Exo', 'Arial', 'Sans serif';
     color: $tamna;
@@ -6,9 +7,6 @@ body {
 
 h1 {
     margin: 0.67rem 0;
-}
-
-h1 {
     text-align: center;
     font-size: 1.8rem;
     font-weight: 700;
@@ -38,12 +36,10 @@ p {
     @include breakpoint($large) {
         font-size: 1.2rem;
     }
-    &:active {
-        color: $narandzasta;
-    }
-    &:hover {
-        color: $narandzasta;
-    }
+}
+
+.gornji-submeni a:hover {
+    color: $narandzasta;
 }
 
 .gornji-meni .o-s-link {
@@ -144,6 +140,43 @@ p {
     }
 }
 
+// HERO ---------------------------
+.hero h1 {
+    color: $narandzasta;
+}
+
+.sitemap,
+.sitemap a {
+    color: $svetla;
+}
+
+.sitemap a:hover {
+    color: $narandzasta;
+}
+
+// SADRZAJ ---------------------------
+.sadrzaj {
+    h4,
+    h2,
+    h3 {
+        text-align: center;
+        color: $narandzasta;
+        font-weight: 800;
+    }
+    h2{
+        font-size: 2rem;
+    }
+    h3{
+        font-size: 1.7rem;
+    }
+    h4{
+        font-size: 1.4rem;
+    }
+    p, ul{
+        font-size: 1.25rem;
+    }
+}
+
 // FOOTER
 .top-footer a {
     font-size: 1.2rem;
@@ -215,14 +248,16 @@ p {
 
 // SIDEBAR
 .sidebar h2 {
-    color: $narandzasta;
-    text-align: left;
-    margin-left: 15px;
-    font-size: 1.7rem;
+    color: $tamna;
+    text-align: center;
+    padding-left: 15px;
+    font-size: 1.4rem;
+    margin: 0.1rem 0;
 }
 
 .sidebar ul {
     @extend %meni;
+    padding-left: 5px;
     li {
         display: block;
         text-align: left;
@@ -230,12 +265,9 @@ p {
 }
 
 .sidebar a {
-    font-size: 1.3rem;
-    padding-bottom: 1.5rem;
-    color: $tamna;
-    &:hover {
-        color: $narandzasta;
-    }
+    font-size: 1.2rem;
+    padding-bottom: 1.4rem;
+    color: $svetla;
 }
 
 // PAKETI-BOX-----------------
@@ -249,7 +281,7 @@ p {
         font-weight: 600;
         margin: 1.1rem 0;
     }
-    h4{
+    h4 {
         color: $narandzasta;
         font-size: 1.5rem;
         font-weight: 400;
@@ -258,9 +290,9 @@ p {
             padding-left: 10px;
         }
     }
-    a{
-       font-size: 1.6rem;
-        font-weight: 600; 
+    a {
+        font-size: 1.6rem;
+        font-weight: 600;
         display: block;
         background-color: $narandzasta;
         padding: 10px 0;

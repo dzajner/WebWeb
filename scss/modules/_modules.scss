@@ -1,0 +1,429 @@
+@import "header";
+@import "kontakt";
+@import "sadrzaj";
+@import "login";
+
+// -- TXT BOX
+.text-box {
+    @include breakpoint($tablet) {
+        border-bottom: none;
+    }
+}
+
+.text-box:last-child {
+    border-bottom: none;
+}
+
+// -- PAKETI
+.paketi-slike {
+    figure {
+        overflow: hidden;
+        * {
+            transition: $trisek;
+        }
+        figcaption {
+            background-color: rgba(247, 125, 23, 0.7);
+            padding: 10px;
+        }
+        &:hover figcaption {
+            height: 75px;
+            background-color: rgba(247, 125, 23, 0.95);
+        }
+        img {
+            transform: scale(1);
+        }
+        &:hover img {
+            transform: scale(1.15);
+        }
+        h4 {
+            margin: 0;
+        }
+        &:hover h4 {
+            padding-left: 20px;
+            padding-bottom: 5px;
+            transform: scale(1.15);
+        }
+        h5 {
+            margin: 0;
+        }
+        &:hover h5 {
+            transform: scale(1.15);
+            padding-left: 20px;
+        }
+        span {
+            opacity: 0;
+        }
+        &:hover span {
+            opacity: 1;
+            transform: translate3d(-70px, 0, 0);
+            transition: transform 0.35s;
+        }
+    }
+}
+
+// -- KATEGORIJE
+.kategorija {
+    transition: $trisek;
+    cursor: $cursor-p;
+    @include breakpoint($mobile) {
+        border-bottom: none;
+    }
+    a {
+        // position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: all 0.6s;
+        opacity: 0;
+        bottom: -100%;
+    }
+    span {
+        opacity: 0;
+        transition: $trisek;
+        color: $svetla;
+    }
+    svg {
+        transition: $trisek;
+        fill: $tamna;
+    }
+    &:hover {
+        color: $narandzasta;
+        a {
+            bottom: 0;
+            opacity: 1;
+        }
+        span {
+            opacity: 1;
+            color: $tamna;
+        }
+        svg {
+            transform: rotateY(360deg);
+            fill: $narandzasta;
+            backface-visibility: hidden;
+        }
+    }
+    &:focus {
+        color: $narandzasta;
+        a {
+            bottom: 0;
+            opacity: 1;
+        }
+        span {
+            opacity: 1;
+            color: $tamna;
+        }
+        svg {
+            transform: rotateY(360deg);
+            fill: $narandzasta;
+            backface-visibility: hidden;
+        }
+    }
+}
+
+.kategorija h2,
+.kategorija svg,
+.kategorija p {
+    pointer-events: none;
+}
+
+// -- TOP FOOTER
+.top-footer {
+    background: $svetli-gradient;
+    box-shadow: 0px -1px 16px 1px rgba(0, 0, 0, 0.4);
+    a {
+        background: $tamni-gradient;
+        transition: $trisek;
+        color: $svetla;
+    }
+    a:hover {
+        background: $narandzasti-gradient;
+    }
+}
+
+// -- FOOTER
+.footer {
+    background-color: $tamna;
+    h3 {
+        border-bottom: 1px solid $narandzasta;
+        padding: 0 0 5px 30px;
+        margin-bottom: 0.5rem 0;
+    }
+}
+
+.footer-kolona.linkovi h3 {
+    @include breakpoint ($large) {
+        padding-right: 30px;
+        display: inline-block;
+    }
+}
+
+.footer ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+    list-style-type: disc;
+    margin-left: 20px;
+    @include breakpoint($tablet) {
+        margin-left: 0;
+    }
+    color: $svetla;
+    li {
+        padding: 2px 0;
+    }
+    &.no-bullets {
+        list-style-type: none;
+    }
+}
+
+.footer a:hover {
+    color: $narandzasta;
+}
+
+.kolona-kontakt h3 {
+    @include breakpoint ($tablet) {
+        text-align: center;
+    }
+}
+
+.kolona-kontakt ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.social a {
+    background-color: $svetla;
+    &:hover {
+        background-color: $narandzasta;
+    }
+}
+
+.kolona-partneri h3 {
+    border-bottom: 1px solid $narandzasta;
+    margin-bottom: 0.5rem;
+    padding: 0 0px 5px 30px;
+}
+
+.bottom-footer {
+    background-color: $narandzasta;
+}
+
+.viber {
+    color: #7D519E;
+}
+
+.whatsapp {
+    color: #3BBB28;
+}
+
+.skype {
+    color: #00AFF0;
+}
+
+// -- MODAL FORMA
+.remodal form select,
+.remodal form input,
+.remodal form textarea {
+    width: 100%;
+    max-width: 300px;
+    @extend %center;
+    border-radius: 0;
+    margin-bottom: 0.5rem;
+    border: none;
+    background-color: #D3D3D3;
+    border: 1px solid #ADADAD;
+    padding-left: 0.3rem;
+    transition: all 0.4s ease-in-out;
+}
+
+.remodal form select:focus,
+.remodal form input:focus,
+.remodal form textarea:focus {
+    box-shadow: 0 0 8px $narandzasta;
+    border: 1px solid rgba($narandzasta, 0.8);
+    outline: 0;
+}
+
+.remodal form select,
+.remodal form input {
+    height: 2rem;
+}
+
+.remodal form select {
+    background: url(../img/dropdown.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    appearance: none;
+    width: 100%;
+}
+
+// PARALLAX BACKGROUND
+.parallax {
+    @extend %skriveno;
+    @include breakpoint(min-width 1800px) {
+        display: block;
+        opacity: 1;
+    }
+}
+
+.bg {
+    background-image: url(../img/bg-front.png);
+    z-index: -1;
+}
+
+.bg2 {
+    background-image: url(../img/bg-back.png);
+    z-index: -2;
+}
+
+.bg,
+.bg2 {
+    position: absolute;
+    width: 100%;
+    // height: 2100px;
+    background-repeat: repeat-y;
+    // background-position: center center;
+    background-size: contain;
+}
+
+// HELPER CLASS FOOTER
+@include breakpoint(max-width 369px) {
+    .hide {
+        display: none;
+    }
+    .top-footer .center {
+        width: 250px;
+    }
+}
+
+//  HERO
+.hero {
+    height: 200px;
+     @include breakpoint (620px 755px) {
+        height: 252px;
+        background-size: contain;
+    }
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    background-image: url(../img/hero-izrada-sajta.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    @include breakpoint ($medium) {
+        border-bottom: 6px solid #f77d17;
+        background-size: contain;
+    }
+}
+.hero.kontakt{
+    background-image: url(../img/hero-kontakt.jpg);
+}
+
+// SIDEBAR
+.sidebar {
+    background-color: $tamna;
+    .sb {
+        background-color: $tamna;
+    }
+}
+
+.sidebar-baneri {
+    background-color: $tamna;
+}
+
+.sidebar ul {
+    padding-bottom: 10px;
+}
+
+.sidebar li {
+    @extend %symbol-list;
+    background-image: url(../img/big-meni-bullet-beli.png);
+    display: block;
+    padding: 3px 0 3px 15px;
+    background-position: 0 8px;
+    &:hover {
+        cursor: pointer;
+        background-image: url(../img/big-meni-bullet-oranz.png);
+        a {
+            color: $narandzasta;
+        }
+    }
+}
+
+.sidebar h2 {
+    float: left;
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.sb .naslov {
+    background-color: $narandzasta;
+    margin-bottom: 5px;
+}
+
+// HERO
+.hero-txt {
+    position: absolute;
+    top: 10px;
+    z-index: 500;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.sitemap {
+    display: block;
+    text-align: center;
+}
+
+// PAKETI-BOX-----------------
+.paketi-okvir {
+    background-image: url(../img/paketi-okvir.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    padding-bottom: 20px;
+    border-top: 6px solid $tamna;
+}
+
+.paketi {
+    @include center(1200px);
+    h3 {
+        font-size: 2rem;
+        text-align: center;
+        color: $narandzasta;
+    }
+}
+
+.paket {
+    background-color: rgba($tamna, 0.9);
+    color: $svetla;
+    transition: 0.3s;
+    // opacity: .9;
+    h4 {
+        margin: 0 10%;
+        padding: 10px 0;
+        border-top: 1px solid $narandzasta;
+        border-bottom: 1px solid $narandzasta;
+    }
+    ul {
+        margin: 10px 0;
+        list-style-type: none;
+        li {
+            line-height: 25px;
+            &:nth-child(even) {
+                background-color: rgba(255, 255, 255, .12);
+            }
+        }
+    }
+    &:hover {
+        @include breakpoint($large) {
+            transform: scale(1.04);
+            // box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.75);
+        }
+    }
+    a {
+        transition: $trisek;
+        &:hover {
+            color: $tamna;
+        }
+    }
+}

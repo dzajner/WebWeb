@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('.menu-wrapper').scrollToFixed({});
+    $('.meni-wrapper').scrollToFixed({});
     $('.top-footer').scrollToFixed({
         bottom: 0,
         limit: $('.top-footer').offset().top + 40,
@@ -9,7 +9,6 @@ $(document).ready(function() {
         $(this).toggleClass('close');
         $('.glavni-meni').toggleClass('open');
         $('html').toggleClass('no-scroll');
-        //test code
         $('.glavni-meni li').removeClass('open');
         $('.meni-down').removeClass('close');
 
@@ -20,10 +19,8 @@ $(document).ready(function() {
     });
     //submeni
     $('.meni-down').click(function() {
-        $(this).toggleClass('close');
-        $(this).closest('li').toggleClass('open');
+        $(this).closest('li').toggleClass('open').siblings().removeClass('open');
     });
-
 
     $('.o-s-link').click(function() {
         $(this).toggleClass('open');
@@ -36,6 +33,11 @@ $(document).ready(function() {
         hoverpause: true,
         autoPlay: 5000,
     });
+    // scroll to top
+    $(function() {
+        $("#toTop").scrollToTop();
+    });
+
 });
 $(window).load(function() {
     $(".klijenti").flexisel({
@@ -62,14 +64,23 @@ $(window).load(function() {
         }
     });
 });
-
+    // equal height
+$(window).on('load resize', function(){
+    if ($(window).width() >= 620) {
+        $('#page').equalize();
+    }
+    else{
+        $('.sadrzaj').css('height','auto');
+    }
+});
+    // paralax efekat
 var h = $('#page');
 
 $('.bg, .bg2').css({
-    height: h.height() + 330
+    height: h.height() + 750
 });
 
 
-$('.glavni-meni.open').css({
-    height: $(window).height
-});
+// $('.glavni-meni.open').css({
+//     height: $(window).height
+// });

@@ -9,10 +9,19 @@
 # ikonice u headeru kao sprites za performanse
 # namikari header responsivnes iznad mob velicine
 # vidi postcss fore za sredjivanje css-a TREBA izmedju ostalog spajanje istih deklaracija
+# mozda namestiti custom animaciju za modal
+# zasad je equal height uradeno sa jquery, ispitati alternative
+# hero slika baguje na 620px-755px
+---------------------------------
+-3 adrese sa lokacijama, parking 1 kontakt tel i vise mailova
+#korisnici
+log in strana
+*****************************************
 
 - Back to top ?
 - doteraj logo jos
 - i umesto strelice dole na gornjem meniju - FIX na IE10
+
 
 
 -----------------
@@ -28,19 +37,36 @@ figcaption-65px - ukupno padding po 10px gore i dole
 
 -----------------------
 
-# ostali sajtovi se ne vidi 
 
 # ako glavni.meni.open (_modules:345) skinemo height:auto onda bude scrollabilno ali visine kao neotvoren meni
 
 ------------------------------------------------------------
-    URADITI !								
+    URADITI 								
 -----------------------------------------------------------
 
-1. popravi sto si zasro [vrati na staro]  <✓>
-2. <git>
+<✓> 1. popravi sto si zasro [vrati na staro]  
+<✓> 2. <git> 
 3. --- ORGANIZACIJA CSS-a ---
+ 		#type
 4. Sredi meni
 
+---- ! ZA FIX ----
+#veca donja crta u podmeniju
 
 
+-----------------------------
+ikonice za poput pakete: [] http://www.flaticon.com/packs/business-collection-3/2 []
 
+adresa
+telefoni
+e-mail
+
+viber - skype - whatsapp
+
+-----kontakt forma----
+
+ime i prezime
+e-mail
+telefon
+pitanje
+[posalji]

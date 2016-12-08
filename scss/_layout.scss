@@ -1,9 +1,7 @@
+// -- JEET SETTINGS
 .container {
     @include center(1200px);
     @include cf;
-    h1 {
-        margin: 10px;
-    }
 }
 
 // -- HEADER
@@ -11,18 +9,12 @@
     height: auto;
     @include breakpoint($tablet) {
         height: 25px;
-        overflow: hidden;
+        overflow: visible;
     }
 }
 
 .gornji-meni {
-    min-height: 55px;
-    // height: auto;
-    @include breakpoint(max-width $tablet) {
-        padding-top: 26px;
-    }
     @include breakpoint($tablet) {
-        // background-color: transparent;
         @include center(1200px);
     }
     .down {
@@ -37,21 +29,10 @@
     }
 }
 
-.o-s-link {
-    display: none;
-    @include breakpoint($tablet) {
-        display: inline-block;
-        padding-top: 3px;
-        margin-left: 280px;
-        // height: auto;
-        // min-height: 25px;
-    }
-}
-
 .gornji-submeni {
     width: 100%;
     @include breakpoint($tablet) {
-        width: 30%;
+        width: 39%;
         display: block;
         height: auto;
         position: static;
@@ -117,7 +98,7 @@
 }
 
 .meni-grupa {
-        @include stack();
+    @include stack();
     @include breakpoint($tablet) {
         @include col(1/4, $gutter: .5);
     }
@@ -219,7 +200,7 @@
 
 .kategorija {
     overflow: hidden;
-    position: relative;
+    // position: relative;
     @include breakpoint($mobile) {
         @include col(1/2, $cycle: 2, $gutter: 3);
     }
@@ -240,7 +221,7 @@
 .kategorije svg {
     width: 15%;
     // height: auto;
-    max-height: 70px;
+    // max-height: 70px;
     @extend %center;
 }
 
@@ -321,7 +302,8 @@
         width: 100%;
         text-align: center;
         img {
-            @extend %center;
+            display: block;
+            margin: 0 auto;
             padding-top: 1rem;
             max-width: 400px;
         }
@@ -440,7 +422,36 @@
         @include shift(1/4, span);
     }
 }
- // PAKETI-BOX-----------------
- .paket{
-    @include column(1/3, $gutter: 1.5);
- }
+
+// PAKETI-BOX-----------------
+.paketi{
+    @extend %layout-grupa;
+}
+.paket {
+    @include breakpoint($mobile) {
+        @include col(1/2, $cycle: 2);
+    }
+    @include breakpoint(1000px) {
+        @include col(1/4, $uncycle: 2, $gutter: 1);
+    }
+}
+// KONTAKT --------------------------------
+.kontakt-podaci{
+    @include breakpoint($medium) {
+        @include span(3/7);
+    }
+}
+.kontakt-forma{
+    @include breakpoint($medium) {
+        @include span(3/7);
+        @include shift(0.05);
+    }
+}
+// LOG IN --------------------------------
+.log-in-wrapper{
+    max-width: 430px;
+    margin: 5px auto;
+    @include breakpoint(min-height 520px){
+        margin-top: 5%;
+    }
+}

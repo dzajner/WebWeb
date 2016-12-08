@@ -1,0 +1,47 @@
+.log-in-wrapper {
+    form {
+        background-color: $tamna;
+        padding: 5%;
+        h3 {
+            color: $narandzasta;
+            text-align: center;
+            font-size: 1.5rem;
+            // padding: 0.8rem;
+            // font-weight: 700;
+            margin: 0 0 1.5rem 0;
+        }
+        label {
+            color: $svetla;
+            display: block;
+            font-size: 1.3rem;
+            text-align: left;
+        }
+        input {
+            line-height: 2.5rem;
+            font-size: 1.3rem;
+        }
+        button[type="submit"] {
+            position: relative;
+            top: 35px;
+            margin-top: -20px;
+            margin-left: 10%;
+            transition: $trisek;
+            &:hover {
+                color: $svetla;
+            }
+        }
+    }
+    a {
+        // background-color: $narandzasta;
+        margin-top: 20px;
+        display: block;
+        transition: $trisek;
+        color: $tamna;
+        text-align: center;
+        font-size: 1.4rem;
+        margin-top: 5rem;
+        &:hover{
+        	color: $narandzasta;
+        }
+    }
+}

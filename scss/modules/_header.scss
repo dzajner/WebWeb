@@ -1,22 +1,32 @@
-// -- HEADER
 .header {
     @include breakpoint($tablet) {
         background-image: $svetli-gradient;
     }
 }
 
-// -- GORNJI MENI
+// -- mod-GORNJI MENI
 .gornji-meni {
     background-image: url(../img/header-bg.png);
     background-position: 180px top;
     background-repeat: no-repeat;
+    position: relative;
+    min-height: 55px;
+    height: auto;
     @include breakpoint($tablet) {
         background-image: none;
     }
 }
 
 .o-s-link {
+    display: none;
     cursor: $cursor-p;
+    @include breakpoint($tablet) {
+        display: inline-block;
+        // padding-top: 3px;
+        margin-left: 280px;
+        height: auto;
+        // min-height: 25px;
+    }
     span:before {
         content: "+";
         margin-left: 7px;
@@ -49,6 +59,7 @@
 
 .gornji-meni .down {
     cursor: $cursor-p;
+    margin-top: 25px;
 }
 
 .close .flipper,
@@ -102,13 +113,17 @@
 .gornji-submeni {
     @extend %meni;
     @extend %skriveni-meni;
-    background-color: $tamna;
     transition: 0.5s ease-in-out;
     height: 0;
+    background-color: $tamna;
     @include breakpoint($tablet) {
         opacity: 1;
-        // background-color: transparent;
+        background-color: transparent;
         height: auto;
+        padding-right: 1rem;
+    }
+    @include breakpoint($large) {
+        padding-right: 2rem;
     }
     li {
         height: 0px;
@@ -118,6 +133,7 @@
         border-bottom: 1px solid $svetla;
         padding-top: 3px;
         @include breakpoint($tablet) {
+            float: right;
             padding-right: 0.9rem;
             height: auto;
             display: inline-block;
@@ -178,8 +194,8 @@
     }
 }
 
-// -- GLAVNI MENI
-.menu-wrapper {
+// mod-GLAVNI MENI
+.meni-wrapper {
     height: 44px;
     background-color: $tamna;
     box-shadow: 0px 16px 15px 1px rgba(0, 0, 0, 0.4);
@@ -197,11 +213,11 @@
     @extend %skriveni-meni;
     width: 100%;
     // background: $tamna;
-    position: relative;
     display: block;
     z-index: 200;
     transition: all 0.4s cubic-bezier(1, -0.02, 1, 0.76);
     @include breakpoint($tablet) {
+        position: relative;
         overflow: visible;
         opacity: 1;
         @include center(900px);
@@ -233,7 +249,10 @@
             background-position: 0 5px;
         }
         &:hover {
-            background-image: url(../img/big-meni-bullet-over.png);
+            background-image: url(../img/big-meni-bullet-beli.png);
+            @include breakpoint($tablet) {
+                background-image: url(../img/big-meni-bullet-oranz.png);
+            }
         }
     }
 }
@@ -267,6 +286,9 @@ li.open .big-meni {
     padding-top: 6px;
     transition: $trisek;
     background-color: $tamna;
+    &:hover {
+        background-color: $narandzasta;
+    }
     .meni-down {
         cursor: pointer;
         float: right;
@@ -284,22 +306,20 @@ li.open .big-meni {
             display: none;
             height: 0;
         }
-        &.close {
-            background-image: url(../img/up-svetla.png);
-        }
     }
     &.open {
         background-color: $narandzasta;
         height: auto;
+        li:hover a {
+            color: $svetla;
+        }
         a {
             padding-bottom: 5px;
             display: inline-block;
-            &:hover {
-                color: $tamna;
-            }
         }
         span {
             content: "-";
+            background-image: url(../img/up-svetla.png);
         }
     }
     @include breakpoint($tablet) {
@@ -343,8 +363,10 @@ li.open .big-meni {
 
 .glavni-meni.open {
     position: relative;
-    min-height: 281px;
-    height: 79%;
+    // min-height: 281px;
+    height: auto;
+    max-height: 900%;
+    // max-height: 620px;
     overflow-y: scroll;
     width: 100%;
     opacity: 1;
@@ -428,377 +450,5 @@ li.open .big-meni {
     margin: 4px 0;
     a {
         line-height: 25px;
-    }
-}
-
-// -- TXT BOX
-.text-box {
-    @include breakpoint($tablet) {
-        border-bottom: none;
-    }
-}
-
-.text-box:last-child {
-    border-bottom: none;
-}
-
-// -- PAKETI
-.paketi-slike {
-    figure {
-        overflow: hidden;
-        * {
-            transition: $trisek;
-        }
-        figcaption {
-            background-color: rgba(247, 125, 23, 0.7);
-            padding: 10px;
-        }
-        &:hover figcaption {
-            height: 75px;
-            background-color: rgba(247, 125, 23, 0.95);
-        }
-        img {
-            transform: scale(1);
-        }
-        &:hover img {
-            transform: scale(1.15);
-        }
-        h4 {
-            margin: 0;
-        }
-        &:hover h4 {
-            padding-left: 20px;
-            padding-bottom: 5px;
-            transform: scale(1.15);
-        }
-        h5 {
-            margin: 0;
-        }
-        &:hover h5 {
-            transform: scale(1.15);
-            padding-left: 20px;
-        }
-        span {
-            opacity: 0;
-        }
-        &:hover span {
-            opacity: 1;
-            transform: translate3d(-70px, 0, 0);
-            transition: transform 0.35s;
-        }
-    }
-}
-
-// -- KATEGORIJE
-.kategorija {
-    transition: $trisek;
-    cursor: $cursor-p;
-    @include breakpoint($mobile) {
-        border-bottom: none;
-    }
-    a {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        transition: all 0.6s;
-        opacity: 0;
-        bottom: -100%;
-    }
-    span {
-        opacity: 0;
-        transition: $trisek;
-        color: $svetla;
-    }
-    svg {
-        transition: $trisek;
-        fill: $tamna;
-    }
-    &:hover {
-        color: $narandzasta;
-        a {
-            bottom: 0;
-            opacity: 1;
-        }
-        span {
-            opacity: 1;
-            color: $tamna;
-        }
-        svg {
-            transform: rotateY(360deg);
-            fill: $narandzasta;
-            backface-visibility: hidden;
-        }
-    }
-    &:focus {
-        color: $narandzasta;
-        a {
-            bottom: 0;
-            opacity: 1;
-        }
-        span {
-            opacity: 1;
-            color: $tamna;
-        }
-        svg {
-            transform: rotateY(360deg);
-            fill: $narandzasta;
-            backface-visibility: hidden;
-        }
-    }
-}
-
-.kategorija h2,
-.kategorija svg,
-.kategorija p {
-    pointer-events: none;
-}
-
-// -- TOP FOOTER
-.top-footer {
-    background: $svetli-gradient;
-    box-shadow: 0px -1px 16px 1px rgba(0, 0, 0, 0.4);
-    a {
-        background: $tamni-gradient;
-        transition: $trisek;
-        color: $svetla;
-    }
-    a:hover {
-        background: $narandzasti-gradient;
-    }
-}
-
-// -- FOOTER
-.footer {
-    background-color: $tamna;
-    h3 {
-        border-bottom: 1px solid $narandzasta;
-        padding: 0 0 5px 30px;
-        margin-bottom: 0.5rem 0;
-    }
-}
-
-.footer-kolona.linkovi h3 {
-    @include breakpoint ($large) {
-        padding-right: 30px;
-        display: inline-block;
-    }
-}
-
-.footer ul {
-    padding-left: 20px;
-    margin-bottom: 15px;
-    list-style-type: disc;
-    margin-left: 20px;
-    @include breakpoint($tablet) {
-        margin-left: 0;
-    }
-    color: $svetla;
-    li {
-        padding: 2px 0;
-    }
-    &.no-bullets {
-        list-style-type: none;
-    }
-}
-
-.footer a:hover {
-    color: $narandzasta;
-}
-
-.kolona-kontakt h3 {
-    @include breakpoint ($tablet) {
-        text-align: center;
-    }
-}
-
-.kolona-kontakt ul {
-    list-style-type: none;
-    padding-left: 0;
-    margin-bottom: 0;
-}
-
-.social a {
-    background-color: $svetla;
-    &:hover {
-        background-color: $narandzasta;
-    }
-}
-
-.kolona-partneri h3 {
-    border-bottom: 1px solid $narandzasta;
-    margin-bottom: 0.5rem;
-    padding: 0 0px 5px 30px;
-}
-
-.bottom-footer {
-    background-color: $narandzasta;
-}
-
-.viber {
-    color: #7D519E;
-}
-
-.whatsapp {
-    color: #3BBB28;
-}
-
-.skype {
-    color: #00AFF0;
-}
-
-// -- MODAL FORMA
-.remodal form select,
-.remodal form input,
-.remodal form textarea {
-    width: 100%;
-    max-width: 300px;
-    @extend %center;
-    border-radius: 0;
-    margin-bottom: 0.5rem;
-    border: none;
-    background-color: #D3D3D3;
-    border: 1px solid #ADADAD;
-    padding-left: 0.3rem;
-    transition: all 0.4s ease-in-out;
-}
-
-.remodal form select:focus,
-.remodal form input:focus,
-.remodal form textarea:focus {
-    box-shadow: 0 0 8px $narandzasta;
-    border: 1px solid rgba($narandzasta, 0.8);
-    outline: 0;
-}
-
-.remodal form select,
-.remodal form input {
-    height: 2rem;
-}
-
-.remodal form select {
-    background: url(../img/dropdown.png);
-    background-repeat: no-repeat;
-    background-position: right;
-    appearance: none;
-    width: 100%;
-}
-
-// PARALLAX BACKGROUND
-.parallax {
-    @extend %skriveno;
-    @include breakpoint(min-width 1800px) {
-        display: block;
-        opacity: 1;
-    }
-}
-
-.bg {
-    background-image: url(../img/bg-front.png);
-    z-index: -1;
-}
-
-.bg2 {
-    background-image: url(../img/bg-back.png);
-    z-index: -2;
-}
-
-.bg,
-.bg2 {
-    position: absolute;
-    width: 100%;
-    // height: 2100px;
-    background-repeat: repeat-y;
-    // background-position: center center;
-    background-size: contain;
-}
-
-// HELPER CLASS FOOTER
-@include breakpoint(max-width 369px) {
-    .hide {
-        display: none;
-    }
-    .top-footer .center {
-        width: 250px;
-    }
-}
-
-// SADRZAJ
-.sadrzaj {
-    padding: 10px;
-    padding-left: 30px;
-    background-color: #fff;
-    img {
-        width: 100%;
-    }
-}
-
-//  HERO
-.hero {
-    height: 200px;
-    overflow: hidden;
-    position: relative;
-    z-index: 0;
-    background-image: url(../img/hero-izrada-sajta.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-    width: 100%;
-}
-
-// SIDEBAR
-.sidebar li {
-    @extend %symbol-list;
-    display: block;
-}
-
-// HERO
-.hero-txt {
-    position: absolute;
-    top: 10px;
-    z-index: 500;
-    top: 50px;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-.sitemap {
-    display: block;
-    text-align: center;
-    a {
-        padding-right: 10px;
-    }
-}
-
-.sidebar-pitanja {
-    background-color: $narandzasta;
-}
-
-.sidebar-baneri img {
-    width: 100%;
-}
-
-// PAKETI-BOX-----------------
-.paket {
-    background-color: $tamna;
-    color: $svetla;
-    transition: 0.3s;
-    h4 {
-        margin: 0 10%;
-        padding: 10px 0;
-        border-top: 1px solid $narandzasta;
-        border-bottom: 1px solid $narandzasta;
-    }
-    ul {
-        margin: 10px 0;
-        li {
-            height: 25px;
-            line-height: 25px;
-            &:nth-child(even) {
-                background-color: #232323;
-            }
-        }
-    }
-    &:hover{
-        transform: scale(1.04);
-        box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.75);
     }
 }

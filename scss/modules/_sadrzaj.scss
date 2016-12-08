@@ -1,0 +1,43 @@
+.sadrzaj {
+    padding: 10px;
+    background-color: #fff;
+    @include breakpoint(min-width $medium) {
+        padding-left: 30px;
+    }
+}
+
+.slika-levo {
+    width: 49%;
+    float: left;
+    margin-right: 2%;
+}
+
+.slika-desno {
+    float: right;
+    width: 49%;
+    margin-left: 2%;
+}
+
+.slika-full {
+    width: 100%;
+}
+
+.sadrzaj table {
+    background-color: $tamna;
+    color: $svetla;
+    font-size: 1.25rem;
+    display: block;
+    margin: 1.5rem 0;
+    thead {
+        color: $narandzasta;
+        height: 20px;
+    }
+    th {
+        font-weight: 500;
+        padding: 0.5rem;
+        width: auto;
+    }
+    tr:nth-child(even) {
+        background-color: rgba(255, 255, 255, 0.09)
+    }
+}

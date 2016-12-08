@@ -1,0 +1,81 @@
+.kontakt-container {
+    background-color: $narandzasta;
+    // height: 300px;
+    margin-bottom: 130px;
+}
+
+.kontakt-podaci {
+    font-size: 1.35rem;
+    font-weight: 600;
+    // max-height: 400px;
+    margin: 0;
+    padding: 2rem;
+}
+
+.lokacija {
+    float: left;
+    margin: 0;
+    // border-bottom: 1px solid;
+    width: 100%;
+    padding-bottom: 20px;
+    h4 {
+        margin: 1rem;
+        margin-left: 0;
+        border-bottom: 1px solid;
+    }
+    .adresa {
+        color: $svetla;
+    }
+    .mail {
+        clear: both;
+        a {
+            color: $tamna;
+        }
+    }
+    svg{
+        width: 40px;
+        float: left;
+    }
+}
+
+.kontakt-forma {
+    background-color: $tamna;
+}
+
+.kontakt-forma,
+.log-in-wrapper {
+    color: $narandzasta;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    h3 {
+        text-align: center;
+    }
+    label,
+    input,
+    textarea {
+        display: block;
+        width: 100%;
+    }
+    input,
+    textarea {
+        background-color: darken($tamna, 2.8%);
+        outline: 0;
+        border: none;
+        color: $narandzasta;
+    }
+    label {
+        color: $svetla;
+        text-align: center;
+        padding: 0.2rem;
+    }
+    button[type="submit"] {
+        background-color: $narandzasta;
+        border: none;
+        color: $tamna;
+        font-size: 1.5rem;
+        width: 80%;
+        padding: 0.5rem 1rem;
+        font-weight: 700;
+    }
+}

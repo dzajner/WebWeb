@@ -59,11 +59,91 @@
 .remodal {
     width: 100%;
     margin-bottom: 10px;
-    padding: 1rem;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+}
+
+.remodal.svetli {
+    padding: 1rem;
     color: $tamna;
     background: $svetla;
+}
+
+// stilovi za tamni modal
+.remodal.tamni {
+    // background: $tamna;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: $svetla;
+    height: 100%;
+    padding: 0;
+    text-align: left;
+    h3 {
+        font-size: 2rem;
+        color: $narandzasta;
+        margin-bottom: 5px;
+        padding: 9px 10px 0 10px;
+        margin-left: 20px;
+        text-align: left;
+        border-bottom: 1px solid $narandzasta;
+        display: inline-block;
+        // width: 80%;
+    }
+    h4 {
+        clear: both;
+        font-size: 2rem;
+        padding: 10px;
+        margin: 0.3rem 0;
+    }
+    p {
+        color: $narandzasta;
+    }
+    ul {
+        list-style-type: none;
+        text-align: left;
+        padding-left: 1rem;
+        li {}
+        span{
+            color: $narandzasta;
+        }
+        img {
+            width: 20px;
+            margin-right: 10px;
+        }
+    }
+    @include breakpoint($mobile) {
+        h3 {
+            font-size: 3.5rem;
+        }
+        ul {
+            font-size: 1.1rem;
+            padding-left: 1.5rem;
+            li {}
+            br{
+                display: none;
+            }
+            img {
+                width: 25px;
+            }
+        }
+    }
+    @include breakpoint($medium) {
+        h3 {
+            font-size: 3.5rem;
+        }
+        ul {
+            font-size: 1.2rem;
+            padding-left: 2rem;
+            li {}
+            img {
+                width: 32px;
+            }
+        }
+    }
+    @include breakpoint($large) {
+        
+        padding-left: 10%;
+    }
 }
 
 .remodal.remodal-is-opening,
@@ -113,6 +193,10 @@
     border: 0;
     outline: 0;
     background: transparent;
+}
+.tamni .remodal-close{
+    top: -3px;
+    right: 0px;
 }
 
 .remodal-close:hover,
@@ -186,8 +270,8 @@
 
 @-webkit-keyframes remodal-opening-keyframes {
     from {
-        -webkit-transform: scale(1.05);
-        transform: scale(1.05);
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
         opacity: 0;
     }
     to {
@@ -199,8 +283,8 @@
 
 @keyframes remodal-opening-keyframes {
     from {
-        -webkit-transform: scale(1.05);
-        transform: scale(1.05);
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
         opacity: 0;
     }
     to {
@@ -217,8 +301,8 @@
         opacity: 1;
     }
     to {
-        -webkit-transform: scale(0.95);
-        transform: scale(0.95);
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
         opacity: 0;
     }
 }
@@ -230,8 +314,8 @@
         opacity: 1;
     }
     to {
-        -webkit-transform: scale(0.95);
-        transform: scale(0.95);
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
         opacity: 0;
     }
 }
@@ -277,7 +361,7 @@
    ========================================================================== */
 
 @media only screen and (min-width: 641px) {
-    .remodal {
+    .remodal.svetli {
         max-width: 600px;
     }
 }
